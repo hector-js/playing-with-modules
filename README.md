@@ -24,13 +24,13 @@ src
     ¦        -page-one.service
     ...
     ¦
-    ---page-[n] [feature-module-folder-[N]]
+     ---page-[n] [feature-module-folder-[N]]
         ¦
         ¦---components
         ¦   ¦
         ¦    -page-[N].component
         ¦
-        ---service
+         ---service
             ¦
             -page-[N].service
         
