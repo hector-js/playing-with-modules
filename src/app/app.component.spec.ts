@@ -31,7 +31,7 @@ describe('AppComponent', () => {
   });
 
   it('should contains', async(() => {
-    expect(nativeElement.querySelector('[data-qa="appTitle"]').textContent).toBe('Play with modules');
+    expect(nativeElement.querySelector('[data-qa="appTitle"]').textContent).toBe('PLAYING WITH MODULES');
     expect(nativeElement.querySelector('[data-qa="pageOne"]').textContent).toBe('PAGE ONE');
     expect(nativeElement.querySelector('[data-qa="pageTwo"]').textContent).toBe('PAGE TWO');
     expect(nativeElement.querySelector('[data-qa="pageThree"]').textContent).toBe('PAGE THREE');
