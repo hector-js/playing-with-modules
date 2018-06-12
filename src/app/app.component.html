@@ -1,10 +1,11 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <fieldset >
-    <legend data-qa="appTitle">{{ title }}</legend>
-    <app-page-one></app-page-one>
-    <app-page-two></app-page-two>
-    <app-page-three></app-page-three>
-    <app-page-four></app-page-four>
-  </fieldset>
+  <h1 data-qa="appTitle">{{ title }}</h1>
+  <router-outlet></router-outlet>
+  <span>
+    <button name="back" (click) = "onBack()">Back</button>
+  </span>
+  <span>
+    <button name="next" (click) = "onContinue()">Continue</button>
+  </span>
 </div>

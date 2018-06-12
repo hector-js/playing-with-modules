@@ -40,11 +40,11 @@ If you want to start the project from scratch, it could be easy running this cli
 
 ```
     cd src
-    ng generate module page-one
+    ng generate module page-one --routing
     ng generate component page-one/page-one
     ng generate service page-one/page-one
     ...
-    ng generate module page-[N]
+    ng generate module page-[N]  --routing
     ng generate component page-one/page-[N]
     ng generate service page-one/page-[N]
 ```

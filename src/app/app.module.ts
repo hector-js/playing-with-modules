@@ -10,12 +10,14 @@ import { PageOneService } from '../modules/page-one/service/page-one.service';
 import { PageTwoService } from '../modules/page-two/service/page-two.service';
 import { PageThreeService } from '../modules/page-three/service/page-three.service';
 import { PageFourService } from '../modules/page-four/service/page-four.service';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     PageOneModule,
     PageTwoModule,
