@@ -1,6 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { PageFourComponent } from './components/page-four/page-four.component';
+
+import { PageFourComponent } from '.';
 
 const routes: Routes = [
   {

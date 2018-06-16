@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageOneComponent } from './components/page-one/page-one.component';
-import { PageOneRoutingModule } from './page-one-routing.module';
+
+import { PageOneComponent, PageOneRoutingModule } from '.';
 
 @NgModule({
   imports: [

@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageThreeComponent } from './components/page-three/page-three.component';
-import { PageThreeRoutingModule } from './page-three-routing.module';
+
+import { PageThreeComponent, PageThreeRoutingModule } from '.';
 
 @NgModule({
   imports: [
@@ -12,7 +12,7 @@ import { PageThreeRoutingModule } from './page-three-routing.module';
     PageThreeComponent
   ],
   exports: [
-    PageThreeComponent
+    PageThreeComponent,
   ]
 })
 export class PageThreeModule { }
