@@ -1,6 +1,6 @@
 import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { PageThreeComponent } from '.';
+import { PageThreeComponent } from './components/page-three/page-three.component';
 
 const routes: Routes = [
   {

@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PageFourComponent, PageFourRoutingModule } from '.';
+import { PageFourComponent } from './components/page-four/page-four.component';
+import { PageFourRoutingModule } from './page-four-routing.module';
+
+
 
 @NgModule({
   imports: [

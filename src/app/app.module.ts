@@ -4,10 +4,10 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from '.';
 import { AppRoutingModule } from '.';
 
-import { PageOneModule, PageOneService } from '../modules/page-one/';
-import { PageTwoModule, PageTwoService } from '../modules/page-two/';
-import { PageThreeModule, PageThreeService } from '../modules/page-three/';
-import { PageFourModule, PageFourService } from '../modules/page-four/';
+import { PageOneService, PageOneModule  } from '../modules/page-one/';
+import { PageTwoService, PageTwoModule  } from '../modules/page-two/';
+import { PageThreeService, PageThreeModule } from '../modules/page-three/';
+import { PageFourService, PageFourModule } from '../modules/page-four/';
 
 @NgModule({
   declarations: [

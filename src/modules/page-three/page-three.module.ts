@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PageThreeComponent, PageThreeRoutingModule } from '.';
+import { PageThreeComponent } from './components/page-three/page-three.component';
+import { PageThreeRoutingModule } from './page-three-routing.module';
 
 @NgModule({
   imports: [
