@@ -1,56 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NavigationService } from '../modules/navigation/services/navigation/navigation.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-
-  public nextPage: string;
-
-  constructor(public router: Router) {
-
-  }
+export class AppComponent implements OnInit {
 
   title = 'PLAYING WITH MODULES';
-  onContinue() {
-    switch (this.nextPage) {
-      case '/page-one':
-        this.nextPage = '/page-two';
-        break;
-      case '/page-two':
-        this.nextPage = '/page-three';
-        break;
-      case '/page-three':
-        this.nextPage = '/page-four';
-        break;
-      case '/page-four':
-        this.nextPage = '/page-one';
-        break;
-      default:
-        this.nextPage = '/page-one';
-    }
-    this.router.navigate([this.nextPage]);
+
+  constructor(public navigationService: NavigationService) {
+    navigationService.subscribeActionEvents();
   }
-  onBack() {
-    switch (this.nextPage) {
-      case '/page-one':
-        this.nextPage = '/page-four';
-        break;
-      case '/page-two':
-        this.nextPage = '/page-one';
-        break;
-      case '/page-three':
-        this.nextPage = '/page-two';
-        break;
-      case '/page-four':
-        this.nextPage = '/page-three';
-        break;
-      default:
-        this.nextPage = '/page-one';
-    }
-    this.router.navigate([this.nextPage]);
+
+  ngOnInit() {
+
   }
+
 }

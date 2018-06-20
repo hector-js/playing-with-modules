@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { PageTwoService } from '../../service/page-two.service';
 
 @Component({
   selector: 'app-page-two',
   templateUrl: './page-two.component.html',
   styleUrls: ['./page-two.component.css']
 })
-export class PageTwoComponent implements OnInit {
+export class PageTwoComponent {
 
-  constructor() { }
+  constructor(public pageTwoService: PageTwoService) { }
 
-  ngOnInit() {
+  onContinue() {
+    this.pageTwoService.sendMessage('continue');
+  }
+
+  onBack() {
+    this.pageTwoService.sendMessage('back');
   }
 
 }

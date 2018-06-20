@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageOneComponent } from './page-one.component';
+import { PageOneService } from '../../service/page-one.service';
 
 describe('PageOneComponent', () => {
   let component: PageOneComponent;
@@ -9,7 +10,10 @@ describe('PageOneComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageOneComponent ]
+      declarations: [ PageOneComponent ],
+      providers: [
+        PageOneService
+      ]
     })
     .compileComponents();
   }));

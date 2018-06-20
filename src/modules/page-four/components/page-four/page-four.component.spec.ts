@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageFourComponent } from './page-four.component';
+import { PageFourService } from '../../service/page-four.service';
 
 describe('PageFourComponent', () => {
   let component: PageFourComponent;
@@ -11,6 +12,9 @@ describe('PageFourComponent', () => {
     TestBed.configureTestingModule({
       declarations: [
         PageFourComponent
+      ],
+      providers: [
+        PageFourService
       ]
     })
     .compileComponents();

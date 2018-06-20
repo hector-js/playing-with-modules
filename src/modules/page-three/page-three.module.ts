@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { PageThreeComponent } from './components/page-three/page-three.component';
 import { PageThreeRoutingModule } from './page-three-routing.module';
+import { MessageProducerModule } from '../message-producer/message-producer.module';
 
 @NgModule({
   imports: [
     CommonModule,
-    PageThreeRoutingModule
+    PageThreeRoutingModule,
+    MessageProducerModule
   ],
   declarations: [
     PageThreeComponent

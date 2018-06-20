@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PageThreeComponent } from './page-three.component';
+import { PageThreeService } from '../../service/page-three.service';
 
 describe('PageThreeComponent', () => {
   let component: PageThreeComponent;
@@ -9,7 +10,10 @@ describe('PageThreeComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PageThreeComponent ]
+      declarations: [ PageThreeComponent ],
+      providers: [
+        PageThreeService
+      ]
     })
     .compileComponents();
   }));
