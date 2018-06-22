@@ -51,7 +51,7 @@ export class NavigationService {
           this.nextPage = '/page-one';
           break;
         default:
-          this.nextPage = '/page-one';
+          this.nextPage = '/page-two';
       }
       this.router.navigate([this.nextPage]);
     } else {
