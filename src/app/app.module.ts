@@ -1,14 +1,13 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-import { AppNavigationService } from './services/app-navigation/app-navigation.service';
+import { PageFourModule, PageFourService } from '../modules/page-four/';
+import { PageOneModule, PageOneService } from '../modules/page-one/';
+import { PageThreeModule, PageThreeService } from '../modules/page-three/';
+import { PageTwoModule, PageTwoService } from '../modules/page-two/';
+import { RouterSpinnerModule } from '../modules/router-spinner/router-spinner.module';
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
-
-import { PageOneService, PageOneModule  } from '../modules/page-one/';
-import { PageTwoService, PageTwoModule  } from '../modules/page-two/';
-import { PageThreeService, PageThreeModule } from '../modules/page-three/';
-import { PageFourService, PageFourModule } from '../modules/page-four/';
+import { AppNavigationService } from './services/app-navigation/app-navigation.service';
 
 
 @NgModule({
@@ -16,12 +15,12 @@ import { PageFourService, PageFourModule } from '../modules/page-four/';
     AppComponent
   ],
   imports: [
-    AppRoutingModule,
     BrowserModule,
     PageOneModule,
     PageTwoModule,
     PageThreeModule,
-    PageFourModule
+    PageFourModule,
+    RouterSpinnerModule
   ],
   providers: [
     AppNavigationService,

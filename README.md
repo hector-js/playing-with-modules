@@ -62,3 +62,10 @@ Tools
 References
 =========
 https://angular.io/guide/ngmodules
+
+
+Update
+======
+
+
+I have added new module named router spinner which adds a spinner between different events in the router

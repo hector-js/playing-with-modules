@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationCancel, NavigationError, NavigationStart } from '@angular/router';
+
 import { NavigationService } from '../modules/navigation/services/navigation/navigation.service';
+import { PageFourComponent } from '../modules/page-four';
+import { PageOneComponent } from '../modules/page-one';
+import { PageThreeComponent } from '../modules/page-three';
+import { PageTwoComponent } from '../modules/page-two';
 
 @Component({
   selector: 'app-root',
@@ -11,12 +16,28 @@ export class AppComponent implements OnInit {
 
   title = 'PLAYING WITH MODULES';
 
-  constructor(public navigationService: NavigationService) {
-    navigationService.subscribeActionEvents();
-  }
+  CLASS_LOADING = 'loading';
+
+  components = [
+    PageOneComponent,
+    PageTwoComponent,
+    PageThreeComponent,
+    PageFourComponent
+  ];
+
+  displayEvents = [
+    NavigationStart
+  ];
+
+  hideEvents = [
+    NavigationCancel,
+    NavigationError
+  ];
+
+  constructor(public navigationService: NavigationService) {}
 
   ngOnInit() {
-
+    this.navigationService.subscribeActionEvents();
   }
 
 }
