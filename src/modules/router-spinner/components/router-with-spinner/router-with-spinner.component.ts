@@ -21,16 +21,16 @@ export class RouterWithSpinnerComponent implements AfterViewInit, OnInit  {
   public routerOutlet: RouterOutlet;
 
   ngOnInit(): void {
-    this.router.events.subscribe((event: RouterEvent) => {
-      this.showAndHideActioner(this.SHOW_EVENTS, event, 'show');
-      this.showAndHideActioner(this.HIDE_EVENTS, event, 'hide');
+    this.router.events.subscribe(($routerEvent: RouterEvent) => {
+      this.showAndHideActioner(this.SHOW_EVENTS, $routerEvent, 'show');
+      this.showAndHideActioner(this.HIDE_EVENTS, $routerEvent, 'hide');
     });
   }
 
   ngAfterViewInit(): void {
     this.routerOutlet.activateEvents
-    .subscribe(component =>
-      this.showAndHideActioner(this.ROUTER_COMPONENTS, component, 'hide'));
+    .subscribe($eventComp =>
+      this.showAndHideActioner(this.ROUTER_COMPONENTS, $eventComp, 'hide'));
   }
 
   private showAndHideActioner(list: any[], comparator, action) {
