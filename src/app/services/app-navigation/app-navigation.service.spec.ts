@@ -7,7 +7,7 @@ import { PageFourService } from '../../../modules/page-four';
 
 import { TestBed } from '@angular/core/testing';
 
-fdescribe('AppNavigationService', () => {
+describe('AppNavigationService', () => {
   let appNavigationService: AppNavigationService;
   let navigationServiceSpy;
 
