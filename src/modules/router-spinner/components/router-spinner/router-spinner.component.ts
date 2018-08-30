@@ -1,22 +1,21 @@
 import { AfterViewInit, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NavigationEnd, Router, RouterEvent, RouterOutlet } from '@angular/router';
-import { Subject, Subscription } from 'rxjs';
+import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-router-with-spinner',
-  templateUrl: './router-with-spinner.component.html',
-  styleUrls: ['./router-with-spinner.component.css']
+  selector: 'app-router-spinner',
+  templateUrl: './router-spinner.component.html'
 })
-export class RouterWithSpinnerComponent implements AfterViewInit, OnInit {
+export class RouterSpinnerComponent implements AfterViewInit, OnInit {
 
-  @Input() CLASS_LOADING: string;
-  @Input() ROUTER_COMPONENTS: any[];
-  @Input() SHOW_EVENTS: any[];
-  @Input() HIDE_EVENTS: any[];
+  @Input() routerComponents: any[];
+  @Input() showEvents: any[];
+  @Input() hideEvents: any[];
+  @Input() loadingClass: string;
 
   spinnerDisplay = null;
 
-  private $subject = new Subject();
+  private $subject = new Subject<string>();
   private navEndFlag: boolean;
   private afterViewFlag: boolean;
 
@@ -32,8 +31,8 @@ export class RouterWithSpinnerComponent implements AfterViewInit, OnInit {
     });
 
     this.router.events.subscribe(($routerEvent: RouterEvent) => {
-      this.showAndHideActioner(this.SHOW_EVENTS, $routerEvent, 'show');
-      this.showAndHideActioner(this.HIDE_EVENTS, $routerEvent, 'hide');
+      this.showAndHideActioner(this.showEvents, $routerEvent, 'show');
+      this.showAndHideActioner(this.hideEvents, $routerEvent, 'hide');
       if ($routerEvent instanceof NavigationEnd) {
         this.$subject.next('eventsNavigationFinish');
       }
@@ -42,16 +41,16 @@ export class RouterWithSpinnerComponent implements AfterViewInit, OnInit {
 
   ngAfterViewInit(): void {
     this.routerOutlet.activateEvents
-    .subscribe($compEvent => this.updatePageRenderedFlag(this.ROUTER_COMPONENTS, $compEvent));
+    .subscribe($compEvent => this.updatePageRenderedFlag(this.routerComponents, $compEvent));
   }
 
-  private updatePageRenderedFlag(list: any[], $event) {
+  private updatePageRenderedFlag(list: any[], $event): void {
     if (list.filter(item => $event instanceof item).length > 0) {
       this.$subject.next('pageRendered');
     }
   }
 
-  private showAndHideActioner(list: any[], $event, action) {
+  private showAndHideActioner(list: any[], $event, action): void {
     if (list.filter(item => $event instanceof item).length > 0) {
       action === 'show' ? this.showSpinner() : this.hideSpinner();
     }
@@ -62,10 +61,10 @@ export class RouterWithSpinnerComponent implements AfterViewInit, OnInit {
   }
 
   private showSpinner(): void {
-    this.spinnerDisplay = this.CLASS_LOADING;
+    this.spinnerDisplay = this.loadingClass;
   }
 
-  private updateFlags(value: string) {
+  private updateFlags(value: string): void {
     if (value === 'eventsNavigationFinish') {
       this.navEndFlag = true;
     } else if (value === 'pageRendered') {
@@ -78,7 +77,7 @@ export class RouterWithSpinnerComponent implements AfterViewInit, OnInit {
     this.afterViewFlag = false;
   }
 
-  private hideSpinnerWhenPageRenderedAndRouterEventsEnds(): void{
+  private hideSpinnerWhenPageRenderedAndRouterEventsEnds(): void {
     if (this.navEndFlag && this.afterViewFlag) {
       this.hideSpinner();
       this.resetFlags();

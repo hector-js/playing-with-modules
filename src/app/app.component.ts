@@ -16,8 +16,6 @@ export class AppComponent implements OnInit {
 
   title = 'PLAYING WITH MODULES';
 
-  CLASS_LOADING = 'loading';
-
   components = [
     PageOneComponent,
     PageTwoComponent,
@@ -25,11 +23,11 @@ export class AppComponent implements OnInit {
     PageFourComponent
   ];
 
-  displayEvents = [
+  $eventsToDisplay = [
     NavigationStart
   ];
 
-  hideEvents = [
+  $eventsToHide = [
     NavigationCancel,
     NavigationError
   ];

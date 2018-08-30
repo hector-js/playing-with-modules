@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterWithSpinnerComponent } from './components/router-with-spinner/router-with-spinner.component';
+import { RouterSpinnerComponent } from './components/router-spinner/router-spinner.component';
 import { AppRoutingModule } from '../../app/app-routing.module';
 
 @NgModule({
@@ -9,10 +9,10 @@ import { AppRoutingModule } from '../../app/app-routing.module';
     AppRoutingModule,
   ],
   declarations: [
-    RouterWithSpinnerComponent
+    RouterSpinnerComponent
   ],
   exports: [
-    RouterWithSpinnerComponent
+    RouterSpinnerComponent
   ]
 })
 export class RouterSpinnerModule { }

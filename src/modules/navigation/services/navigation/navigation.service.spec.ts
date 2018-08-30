@@ -1,15 +1,22 @@
 import { TestBed, inject } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
+import { Router } from '@angular/router';
 
 import { NavigationService } from './navigation.service';
 
 describe('NavigationService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NavigationService]
+      imports: [
+        RouterTestingModule.withRoutes([])
+      ],
+      providers: [
+        NavigationService,
+        Router
+      ]
     });
   });
 
-  // POC
   xit('should be created', inject([NavigationService], (service: NavigationService) => {
     expect(service).toBeTruthy();
   }));

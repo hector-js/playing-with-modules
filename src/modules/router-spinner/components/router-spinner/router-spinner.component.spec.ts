@@ -23,7 +23,7 @@ import {
 } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { RouterWithSpinnerComponent } from './router-with-spinner.component';
+import { RouterSpinnerComponent } from './router-spinner.component';
 
 
 @Component({
@@ -36,10 +36,9 @@ export const routes: Routes = [
   { path: 'OneComponent', component: OneComponent },
 ];
 
-
 describe('RouterWithSpinnerComponent', () => {
-  let component: RouterWithSpinnerComponent;
-  let fixture: ComponentFixture<RouterWithSpinnerComponent>;
+  let component: RouterSpinnerComponent;
+  let fixture: ComponentFixture<RouterSpinnerComponent>;
   let location: Location;
   let router: Router;
 
@@ -49,7 +48,7 @@ describe('RouterWithSpinnerComponent', () => {
         RouterTestingModule.withRoutes(routes)
       ],
       declarations: [
-        RouterWithSpinnerComponent,
+        RouterSpinnerComponent,
         OneComponent
       ]
     })
@@ -57,16 +56,16 @@ describe('RouterWithSpinnerComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RouterWithSpinnerComponent);
+    fixture = TestBed.createComponent(RouterSpinnerComponent);
     component = fixture.componentInstance;
 
     router = TestBed.get(Router);
     location = TestBed.get(Location);
-    component.CLASS_LOADING = 'loading';
+    component.loadingClass = 'loading';
 
-    component.ROUTER_COMPONENTS = [OneComponent];
-    component.SHOW_EVENTS = [NavigationStart];
-    component.HIDE_EVENTS = [NavigationError, NavigationCancel];
+    component.routerComponents = [OneComponent];
+    component.showEvents = [NavigationStart];
+    component.hideEvents = [NavigationError, NavigationCancel];
   });
 
   it('should create', () => {

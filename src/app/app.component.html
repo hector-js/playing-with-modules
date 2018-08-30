@@ -1,9 +1,9 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
   <h1 data-qa="appTitle">{{ title }}</h1>
-  <app-router-with-spinner
-   [ROUTER_COMPONENTS]="components" 
-   [SHOW_EVENTS]="displayEvents"  
-   [HIDE_EVENTS]="hideEvents" 
-   [CLASS_LOADING]="'loading'"></app-router-with-spinner>
+  <app-router-spinner
+   [routerComponents]="components" 
+   [showEvents]="$eventsToDisplay"  
+   [hideEvents]="$eventsToHide" 
+   [loadingClass]="'loading'"></app-router-spinner>
 </div>

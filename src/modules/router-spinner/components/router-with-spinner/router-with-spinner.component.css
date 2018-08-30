@@ -1,7 +1,0 @@
-.loading {
-    position: fixed;
-    width: 100%;
-    height: 50%;
-    background: white  url('../../../../assets/gears.gif') center center no-repeat;
-    opacity: .5;
-}
