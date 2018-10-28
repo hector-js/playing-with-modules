@@ -1,5 +1,5 @@
-PLAYING WITH MODULES
-=================
+PLAYING WITH MODULES ANGULAR 7
+=============================
 The title describes the project  by itself, *playing with modules* in Angular *6* for a *multi page* application!! :)
 
 RootModules and FeatureModule
