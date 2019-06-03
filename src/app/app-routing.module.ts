@@ -4,23 +4,23 @@ import { NgModule } from '@angular/core';
 export const routes: Routes = [
   {
     path: '',
-    loadChildren: 'modules/page-one/page-one.module#PageOneModule'
+    loadChildren: () => import('modules/page-one/page-one.module').then(m => m.PageOneModule)
   },
   {
     path: 'page-one',
-    loadChildren: 'modules/page-one/page-one.module#PageOneModule'
+    loadChildren: () => import('modules/page-one/page-one.module').then(m => m.PageOneModule)
   },
   {
     path: 'page-two',
-    loadChildren: 'modules/page-two/page-two.module#PageTwoModule'
+    loadChildren: () => import('modules/page-two/page-two.module').then(m => m.PageTwoModule)
   },
   {
     path: 'page-three',
-    loadChildren: 'modules/page-three/page-three.module#PageThreeModule'
+    loadChildren: () => import('modules/page-three/page-three.module').then(m => m.PageThreeModule)
   },
   {
     path: 'page-four',
-    loadChildren: 'modules/page-four/page-four.module#PageFourModule'
+    loadChildren: () => import('modules/page-four/page-four.module').then(m => m.PageFourModule)
   },
   {
     path: '',

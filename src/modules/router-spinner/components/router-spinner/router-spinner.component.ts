@@ -21,7 +21,7 @@ export class RouterSpinnerComponent implements AfterViewInit, OnInit {
 
   constructor(public router: Router) {}
 
-  @ViewChild(RouterOutlet)
+  @ViewChild(RouterOutlet, { static: true })
   public routerOutlet: RouterOutlet;
 
   ngOnInit(): void {
